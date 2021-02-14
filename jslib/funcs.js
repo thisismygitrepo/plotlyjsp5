@@ -26,3 +26,7 @@ function timeout(){
 
 (function (){console.log("Immediate invoke of function expression IIFE");})()
 
+
+// lambda funcs (arrow function) anonymous funcs
+let add = (a, b) {return a + b};
+// usually used with .map of arrays.

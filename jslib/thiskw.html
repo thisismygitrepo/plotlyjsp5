@@ -1,0 +1,21 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<button onclick="clickHandler(this)">ClickMe</button>
+<body>
+    
+    <script>
+        function clickHandler(arg){
+            console.log(arg);
+            console.log(arg.innerText); // arg is this is DOM element from which it is called.
+            console.log(this);  // this is the window object (global scope) because at call time we did not sepcify it.
+        }
+    </script>
+</body>
+</html>
