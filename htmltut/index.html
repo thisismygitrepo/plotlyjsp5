@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Both HTML and CSS are markup langauges, not programming languages.-->
+<!-- The above is a declaration for the browser to understand that this is an html document.-->
+<!--  index.html is often the name chosen for the homepage of websites. -->
+<!-- HTML is not case sensitive. However, there are conventions for how to write.-->
+<!-- Let us start adding HTML elements. Most of those start and end with tags like this:-->
+<!--Broser doesn't care about spaces and format of this file, its just for readability.
+User prettier to do so.-->
+<html lang="en">  <!-- this lang attribute helps search engines-->
+
+<head>
+    <meta charset="UTF-8">  <!--Helps search engines to decode the file.-->
+    <meta name="viewport">  <!-- Helps making correct proportions on al devices.-->
+    <meta name="keywords", content="HTML, CSS">
+    <meta name="description" content="This is a description of this page">  <!--Often displayed by search engines-->
+    <title>Webpage title</title>
+
+    <!--Below is where the CSS goes. Usually, you would like it to go into a separate file. Beaware that live server doesn't follow those 
+    separate HTMLs and JSs and CSSs, so you need manual refresh.-->
+    <style>  
+    
+        img {
+            width: 100px;
+            border-radius: 50px;
+            float: left;
+            margin-right: 10px;
+        }
+        p.username {
+            font-weight: 600;
+        }
+
+        em {
+            color: red;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: lightblue;">
+    <img src="images/letter_a_small.png" alt="Alternative Text for image">
+    <!-- Notice that an image element doesn't have  a closing tag. Tthe reason is that it 
+    cannot have any childern, so no need for that.-->
+    
+    <!--Headings-->
+    <h1>Twitter</h1>
+    <!--A common misconception is to use the 6 headings based on thier size. Actually the size is a style thing
+    that is determined by CSS. The choice should be based on hirarchy.-->
+
+    <!--PARAGRAPHS-->
+    <p class="username">@ThisIsNotMyID</p>
+    <p>This is a <em>Tweet</em>  </p>
+    <!-- You would think that emphasis is a style thing and should be handled by CSS not HTML
+    Yes, but, being here, it helps search engines understanding what's important about this website.
+Lastly, you can always adjust the rule in CSS to control what does emphasizing visually mean. Default behaviour is italic.
+Similar thing for <strong> 
+    Notice that both em and strong supercede the deprecated i and b for itealic and bold elements-->
+
+
+    <!--To escape special characters of HTML, use &; e.g. &nbsp; for non brreaking space
+        . To see full list: search: HTML entities-->
+
+    <!--Anchors (hyper links)-->
+    <a href="about.html"> 
+        About me 
+        <!--You can add download attribute in the opening tag to change behaviour of clicking on this.
+        Alternatively you can add an image instead of this about me text.
+    You can create a link to a section. Add id attribute to the header begining tab. Then, in href="#id"
+If the id is none, this is a hyperreference to the top of the page and will be placed at the bottom
+To link to external websites.
+href="https://google.com" target="_blank" ==> use this attribute if you want it to open in a new tab.
+Lastly you can also link to emails with href="mailto:programmer@usa.com
+
+Bottomline: link is just the URL or path, a hyperlink is the element object that we click on to takes us there."-->
+
+    </a>
+
+    </body>
+
+</html>
+
+<!--
+    CSS:
+    Syntax: Sylector {key value}
+    Main types of selectors: Element, Class, ID.
+    Element: h1 {color: red;}
+    Class: add a class attribute to the element. An element can have multiple classes separates by space.
+    ID: a unique (not compulsary) for each element is added as an attribute
+
+    when selectign those:
+    bare selection ==> considered an html element
+    .class  ==> a class
+    #id ==> an ID
+
+    You can also combine selectors with multiple dots or ancestors.
+
+    CSS can be either: inline (as an attribute of an element), an element by itself within a parent, or a seprate file.
+    the latter is preffered as it alloows reusability across pages.
+    <link rel="stylesheet" href=""> use within head body
+
+    id, class, element is the precendece in case of conflict from lowest to hightest.
+    inlines override sheets.
+-->
