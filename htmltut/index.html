@@ -80,23 +80,24 @@ Bottomline: link is just the URL or path, a hyperlink is the element object that
 
 <!--
     CSS:
-    Syntax: Sylector {key value}
+    Syntax: Selector {key value}
     Main types of selectors: Element, Class, ID.
-    Element: h1 {color: red;}
+    Element: refers to HTML element by name: 
     Class: add a class attribute to the element. An element can have multiple classes separates by space.
     ID: a unique (not compulsary) for each element is added as an attribute
 
     when selectign those:
-    bare selection ==> considered an html element
+    h1 {color: red;} bare selection ==> considered an html element
     .class  ==> a class
     #id ==> an ID
 
+    In general use classes for styling and id's for anchoring (useful in JS)
     You can also combine selectors with multiple dots or ancestors.
 
     CSS can be either: inline (as an attribute of an element), an element by itself within a parent, or a seprate file.
     the latter is preffered as it alloows reusability across pages.
     <link rel="stylesheet" href=""> use within head body
 
-    id, class, element is the precendece in case of conflict from lowest to hightest.
+    id, class, element is the precendece in case of conflict from highest to lowest.
     inlines override sheets.
 -->
