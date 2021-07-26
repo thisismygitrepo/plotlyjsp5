@@ -16,11 +16,11 @@ function draw() {
     fill(255, 255, 0)
   }
   
-  if (on){
-    background(200);
-  } else {
-    background(0, 0, 100)
-  }
+  // if (on){
+  //   background(200);
+  // } else {
+  //   background(0, 0, 100)
+  // }
   
   if (mouseIsPressed){
       background(100);

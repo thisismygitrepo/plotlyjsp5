@@ -12,6 +12,6 @@ function draw() {
 
   // line(0, 0, v.x, v.y);
   mover.update();
-  mover.draw();
+  mover.show();
   
 }
