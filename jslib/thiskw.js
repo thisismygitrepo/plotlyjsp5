@@ -3,6 +3,7 @@
 function first(){
     return this;
 }
+
 console.log(first() === global);  // true
 
 function second(){

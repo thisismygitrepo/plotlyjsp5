@@ -1,4 +1,14 @@
 
+// 11 JavaScript Decision Statements
+// 12 JavaScript Iteration Statements
+// next scopes.js
+
+// if
+// case
+// ternary operatos: declare and assign
+
+let a = 1, b = 2;
+c = (a == b) ? "equal" : "unequal";
 
 b = 'haha';
 

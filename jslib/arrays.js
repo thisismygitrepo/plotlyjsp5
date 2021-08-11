@@ -1,4 +1,7 @@
 
+// 08 JavaScript Arrays
+// next is functions.js
+
 let a = [1, 2, "dfg"];
 console.log(typeof(a));
 console.log(a[11]);

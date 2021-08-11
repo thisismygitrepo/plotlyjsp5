@@ -6,8 +6,12 @@
 w1 = 630;
 w2 = 550;
 
-ip_store = [];
-op_store = [];
+data = {};
+for(let i=0; i<5; ++i){
+    data[i] = {"ip": [], "op": [], "color": "white"};
+}
+act = 0;  // activated curve.
+color = "white";  // activated color.
 
 let xmin = -4;
 let xmax = 4;
@@ -16,7 +20,7 @@ let ymax = 4;
 
 function func(x, y) {
     z = Complex(x, y)
-    w = z.pow(2);
+    w = z.pow(2).add(1, 0);
     return [w.re, w.im]
 }
 
@@ -55,7 +59,7 @@ const s1 = ( sketch ) => {
 const s2 = ( sketch ) => {
     sketch.setup = () => {
         let canvas = sketch.createCanvas(w1, w2);
-        canvas.position(w1 + 10, 0)
+        canvas.position(w1 + 10, 18)
         sketch.background(0);
         grid(sketch);
     };
@@ -82,15 +86,15 @@ function process_point() {
     ip.strokeWeight(3);
     ip.point(ip.mouseX, ip.mouseY);
 
-    ip_store.push([ip.mouseX, ip.mouseY]);
-    op_store.push([xx, yy]);
-    plot(ip, ip_store);
-    plot(op, op_store);
+    data[act].ip.push([ip.mouseX, ip.mouseY]);
+    data[act].op.push([xx, yy]);
+    plot(ip, data[act].ip);
+    plot(op, data[act].op);
 
 }
 
 function plot(sk, points) {
-    sk.stroke(200, 100, 200);
+    sk.stroke(data[act].color);
     sk.strokeWeight(3);
     sk.noFill();
     sk.beginShape();
@@ -101,3 +105,23 @@ function plot(sk, points) {
 }
 
 ip.keyPressed = process_point;
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelector("#reset").onclick = () => {
+        ip.erase();
+        plot(ip, data[act].ip);
+        ip.noErase();
+        data[act].ip = [];
+        data[act].op = [];
+    };
+
+    document.querySelector("#colors").onchange = function() {
+        data[act].color = this.value;
+    };
+
+    document.querySelector("#curves").onchange = function() {
+        act = Number(this.value);
+    };
+
+});
