@@ -5,15 +5,23 @@
 <!-- HTML is not case sensitive. However, there are conventions for how to write.-->
 <!-- Let us start adding HTML elements. Most of those start and end with tags like this:-->
 <!--Broser doesn't care about spaces and format of this file, its just for readability.
-User prettier to do so.-->
-<html lang="en">  <!-- this lang attribute helps search engines-->
+User prettier to do so.--
+File name is usually index.html, if there are multiple html files in one place, you usually opt for index.html
+and the rest are connect to it.>
+<html lang="en">   -->
+<!-- this lang attribute helps search engines-->
 
 <head>
+    <!-- Meta tags are used to all sorts of configutation settings.-->
     <meta charset="UTF-8">  <!--Helps search engines to decode the file.-->
-    <meta name="viewport">  <!-- Helps making correct proportions on al devices.-->
-    <meta name="keywords", content="HTML, CSS">
+    <meta name="viewport">  <!-- Helps making correct proportions on al devices. lookup the contents-->
+    <meta name="keywords", content="HTML, CSS">   <!-- Helps search engine to index your webpage-->
     <meta name="description" content="This is a description of this page">  <!--Often displayed by search engines-->
+    <meta name="author" content="Alex Al-Saffar">
     <title>Webpage title</title>
+
+    <!-- If any text is written here, it will go to the straight to the page. However, it is almost always a bad idea to throw text in that fashion.
+    Make sure that text is wrapped within a container to have full control over its behaviour.-->
 
     <!--Below is where the CSS goes. Usually, you would like it to go into a separate file. Beaware that live server doesn't follow those 
     separate HTMLs and JSs and CSSs, so you need manual refresh.-->
@@ -37,67 +45,172 @@ User prettier to do so.-->
 
 
 <body style="background-color: lightblue;">
-    <img src="images/letter_a_small.png" alt="Alternative Text for image">
+    <!-- Below, we will have a look at all possible elements in the body. 
+    The elements are displayed sequentially on the webpage. The empty spaces you put in code are irrelevant.
+        To add a break or horizontal rule, use (notice they are single tags)
+            <br> 
+            <hr>
+    -->
+
+
+    <!-- Images -->
+    <img src="images/cat.jpg" alt="Alternative Text for image">
     <!-- Notice that an image element doesn't have  a closing tag. Tthe reason is that it 
     cannot have any childern, so no need for that.-->
     
     <!--Headings-->
-    <h1>Twitter</h1>
+    <h1>Alex On Twitter</h1>
     <!--A common misconception is to use the 6 headings based on thier size. Actually the size is a style thing
     that is determined by CSS. The choice should be based on hirarchy.-->
 
-    <!--PARAGRAPHS-->
+    <!--PARAGRAPHS and Formatting text-->
     <p class="username">@ThisIsNotMyID</p>
-    <p>This is a <em>Tweet</em>  </p>
+    <p>This is a <em>Tweet</em>, and it is <b>bold</b>, and this is <i>Italic</i>, while this is <big>Big</big>
+    and this is <small>Small</small>, and this is subscript usage H<sub>2</sub>O<sup>1</sup> </p>
     <!-- You would think that emphasis is a style thing and should be handled by CSS not HTML
     Yes, but, being here, it helps search engines understanding what's important about this website.
 Lastly, you can always adjust the rule in CSS to control what does emphasizing visually mean. Default behaviour is italic.
 Similar thing for <strong> 
-    Notice that both em and strong supercede the deprecated i and b for itealic and bold elements-->
+    Notice that both em and strong supercede the deprecated i and b for itealic and bold elements
+-->
 
 
     <!--To escape special characters of HTML, use &; e.g. &nbsp; for non brreaking space
         . To see full list: search: HTML entities-->
 
     <!--Anchors (hyper links)-->
-    <a href="about.html"> 
-        About me 
-        <!--You can add download attribute in the opening tag to change behaviour of clicking on this.
-        Alternatively you can add an image instead of this about me text.
-    You can create a link to a section. Add id attribute to the header begining tab. Then, in href="#id"
-If the id is none, this is a hyperreference to the top of the page and will be placed at the bottom
-To link to external websites.
-href="https://google.com" target="_blank" ==> use this attribute if you want it to open in a new tab.
-Lastly you can also link to emails with href="mailto:programmer@usa.com
+    <a href="about.html" target="_blank">
+        About me <!--You can add download attribute in the opening tag to change behaviour of clicking on this.
+        Alternatively you can add an image instead of this about me text.-->
 
-Bottomline: link is just the URL or path, a hyperlink is the element object that we click on to takes us there."-->
-
+        <!--
+        * Link to a section. Add id attribute to the header begining tab. Then, in href="#id". If the id is none, this is a hyperreference to the top of the page and will be placed at the bottom
+        * Link to external websites. href="https://google.com" 
+        * Link to local files and folders href="file.extention"
+        * Link create new tab in the browser: add attributes: target="_blank".
+        * Link to emails with href="mailto:programmer@usa.com"
+        * Summary: link is just the URL or path, a hyperlink is the element object that we click on to takes us there."-->
     </a>
 
+        <!-- TABLES -->
+        <!-- LISTS -->
+        An unordered list.
+        <ul>
+            <li>Item 1</li>
+            <li><a href="google.com">Google</a></li>
+        </ul>
+        <ol type="1">  
+            <!-- You can have types A for letters, (a), (I/i) for Roman numerals. -->
+            <li>Item 1</li>
+            <li><a href="google.com">Google</a></li>
+        </ol>
+
+    <!-- Containers 
+    A container is marked by two set of tags and contains other elements. It is a good habit to wrap elements
+    inside containers because it makes it easy to manage, and style the whole elements inside with one command in CSS.
+    We have two main containers: Divs and Spans.
+The fundemental difference between them is that Divs are block containers while spans are inline containers.
+In general, all elements are either block or inline types. 
+
+Block types take up the entire width of the screen and cannot sit next to each other. Example: paragraph element.
+Inline types can sit next to each other because they only take up as much space as needed. Example: hyperlinks.
+-->
+
+    <!-- Divisions (Blocks) -->
+    <div style="background-color:rgb(230, 173, 204); width: 300px; height: 300px;">
+        This is my First Division block.
+        <!-- These are used to create boxes -->
+        <div style="background-color: rgb(173, 230, 185); width: 200px; height: 200px; margin: 20px; padding:10px">
+            Inside of which I have a nested div. The text is padded by 10px, while the box is margined by 20px.</div>
+    </div>
+    <div>
+        This is my second Division Block.
+    </div>
+    <!-- Spans -->
+    <span>My first span</span>
+    <span>My second span</span>
+
+
+    <!-- Inputs and Forms -->
+    <!-- This kind of element enables the user to interact with the page by filling in forms or changing radio buttons and so on.
+    Almost invariably, you need JS to work in conjuction with this type of element. -->
+
+
+    <!-- IFrames and videos: enable you to embed another webpage inside yours. 
+    embeddings can be made for Google maps as well, in addition to OpenTable.com for reservations.-->
+    <hr>
+    <p>IFrames for embedding another website</p>
+    <iframe src="https://thisismygitrepo.github.io/" frameborder="10" width="300" height="500">Sorry, the website refused to embed here</iframe>
+        <!-- The reason why some website set the settings to prevent other website from embedding their webpage is to prevent identity theft, 
+        such a techniuqe allows impersonation of other websites and facilitates stealing of information if the user thought that he is on the legitimate webpage. 
+    If you do not think such a danger is possible, you can make this feature available for your webpage.-->
+    <video src="images/videoplayback.mp4" controls width="300" poster="images/cat.jpg">The video failed to load up</video>
+    <!-- You can also add: loop autoplay -->
+
+
+    <!-- HTML structure tags: PAGE FORMATTING -->
+    <!-- To format your html file in a structured fashion, there exist a number of format tags to help with that.
+    The are not neccessary as they will not change the content and you can get away without them, however, they are highly recommended
+    as they make a readable html file. Additionally, parasbility of your file is increased which allows search engines to udnerstand the
+     contents of your webapge, and allow users to jump to sections of the webpage immediately. Many peopel udnerstimate its power.
+    See more here: https://itwebtutorials.mga.edu/html/chp2/document-structure.aspx#top 
+    http://w3schools-fa.ir/html/html5_new_elements.html-->
+    <header>
+        <h1>Here I put the title.   </h1>
+    </header>
+    <main>
+        <article>This is my first article on this webpage:
+            <section>
+                Section 1
+            </section>
+            <section>
+                Section 2
+                <aside>This is a space for ad.</aside>
+            </section>
+        </article>
+
+    </main>
+    <footer>
+        This is the footer of my webpage.
+    </footer>
+
     </body>
+
+
 
 </html>
 
 <!--
     CSS:
-    Syntax: Selector {key value}
+    Syntax: Selector {key value; key2: value2;}
+
     Main types of selectors: Element, Class, ID.
-    Element: refers to HTML element by name: 
-    Class: add a class attribute to the element. An element can have multiple classes separates by space.
+    Element: refers to HTML element by name: e.g `p`, `div` etc, and will apply to all elements of that type.
+    Class: add a class attribute to the element. An element can have multiple classes separated by space.
     ID: a unique (not compulsary) for each element is added as an attribute
 
-    when selectign those:
-    h1 {color: red;} bare selection ==> considered an html element
-    .class  ==> a class
-    #id ==> an ID
+    when selecting those:
+    h1 {color: red;} ==> bare selection ==> considered an html element
+    .class {color: red;} ==> a class
+    #id {color: red;} ==> an ID
 
     In general use classes for styling and id's for anchoring (useful in JS)
     You can also combine selectors with multiple dots or ancestors.
 
-    CSS can be either: inline (as an attribute of an element), an element by itself within a parent, or a seprate file.
+    CSS can be either: inline (as an attribute of an element), an element by itself within header,
+     or a seprate file.
     the latter is preffered as it alloows reusability across pages.
-    <link rel="stylesheet" href=""> use within head body
+    <link rel="stylesheet" href=""> use within head body to refer to the separate css file.
 
     id, class, element is the precendece in case of conflict from highest to lowest.
     inlines override sheets.
+
 -->
+
+
+
+<!-- Tips
+    If you open developer page of your webbrowser (right click), then new options will be shown for the refresh button.
+    Hard reload is what you might beinterested in because sometimes the webbrowser uses a cached version and refuses to reload the new one
+    specially when there is large images.
+ -->
