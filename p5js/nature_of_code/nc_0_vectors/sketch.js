@@ -1,5 +1,5 @@
 
-let mover;
+let particle;
 
 function setup() {
   createCanvas(400, 400);
